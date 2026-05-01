@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Stackblock — Substack Feed Blocker",
+  "version": "1.0.0",
+  "description": "Hide the Substack home feed and right-side recommendation widgets (Up next, New Bestsellers). Keeps left nav and search.",
+  "permissions": ["storage"],
+  "host_permissions": ["*://substack.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://substack.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Stackblock"
+  }
+}

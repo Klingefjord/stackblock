@@ -1,0 +1,14 @@
+/* Stackblock — hide rules. Effective only when html.stackblock-on is set. */
+
+/* Hide the main Notes feed on substack.com/home. */
+html.stackblock-on [role="region"][aria-label="Notes feed"] {
+  display: none !important;
+}
+
+/* Hide every right-sidebar card except the one containing the search box.
+   The right sidebar is .reader2-inbox-sidebar (stable, non-hashed class).
+   Its direct children are display:contents wrappers around individual
+   cards, so display:none on a wrapper hides the whole card. */
+html.stackblock-on .reader2-inbox-sidebar > *:not(:has(input[aria-label="Global search"])) {
+  display: none !important;
+}
