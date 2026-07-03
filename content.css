@@ -12,3 +12,22 @@ html.stackblock-on [role="region"][aria-label="Notes feed"] {
 html.stackblock-on .reader2-inbox-sidebar > *:not(:has(input[aria-label="Global search"])) {
   display: none !important;
 }
+
+/* ── Twitter / X ─────────────────────────────────────────────────────────
+   Hide the Home timeline feed while keeping the left nav, the composer
+   ("What's happening?"), search, and profile chrome.
+
+   Scope: only when html.stackblock-x-home is set. content.js adds that class
+   only on the /home route AND only while the "Following" tab is the active
+   one — so "For you", profiles, messages, notifications, and search are all
+   untouched.
+
+   Anchor is Twitter/X's stable data-testid hook — the same on the legacy
+   and current skins, unlike the hash-suffixed CSS classes:
+     - [data-testid="cellInnerDiv"]  → one row of the timeline (each post)
+   Hiding cellInnerDiv removes the feed posts specifically, leaving the
+   composer and the For you / Following tabs (neither is a cellInnerDiv)
+   visible. */
+html.stackblock-on.stackblock-x-home [data-testid="primaryColumn"] [data-testid="cellInnerDiv"] {
+  display: none !important;
+}

@@ -1,13 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Stackblock — Substack Feed Blocker",
-  "version": "1.0.0",
-  "description": "Hide the Substack home feed and right-side recommendation widgets (Up next, New Bestsellers). Keeps left nav and search.",
+  "name": "Stackblock — Feed Blocker",
+  "version": "1.1.0",
+  "description": "Hide the Substack home feed and recommendation widgets, and the Twitter/X home timeline (except during lunch, 12–1pm local).",
   "permissions": ["storage"],
-  "host_permissions": ["*://substack.com/*"],
+  "host_permissions": [
+    "*://substack.com/*",
+    "*://twitter.com/*",
+    "*://x.com/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["*://substack.com/*"],
+      "matches": [
+        "*://substack.com/*",
+        "*://twitter.com/*",
+        "*://x.com/*"
+      ],
       "js": ["content.js"],
       "css": ["content.css"],
       "run_at": "document_start",

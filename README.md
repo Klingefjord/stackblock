@@ -1,13 +1,22 @@
 # stackblock
 
 A small Chrome / Arc extension that hides the noisy parts of
-[substack.com/home](https://substack.com/home):
+[substack.com/home](https://substack.com/home) and Twitter/X:
 
-- The main **Notes feed** (the big middle column of post / note cards)
-- The right-sidebar recommendation widgets (**Up next**, **New Bestsellers**, etc.)
+- Substack: the main **Notes feed** and the right-sidebar recommendation
+  widgets (**Up next**, **New Bestsellers**, etc.)
+- Twitter/X: the posts in the **Following** home feed only (the composer,
+  the *For you* tab, messages, notifications, and profiles are left alone)
 
-The left navigation and the **Search Substack** input stay visible.
+The left navigation and search inputs stay visible on both sites.
 Toggle the blocker on or off from the extension popup.
+
+### Lunch exception (Twitter/X)
+
+The Twitter/X home timeline is blocked at all times **except during lunch,
+12:00–12:59 local time**, when it reappears so you can scroll on your break.
+Substack is always blocked when the toggle is on. A tab left open across the
+lunch boundary updates itself within a minute — no reload needed.
 
 ## Install (Arc / Chrome / any Chromium browser)
 
